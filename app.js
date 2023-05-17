@@ -258,13 +258,14 @@ let enter = document.querySelector(".enter-btn");
 let userBox = document.querySelector(".userName");
 let userName = document.querySelector(".title .pl-tt");
 // Lưu thông tin người dùng
-let arr = [];
 enter.onclick = function () {
+  let arr = [];
   userBox.classList.add("none");
   theRules.classList.remove("none");
   let inputValue = input.value;
-  userName.innerHTML = `${inputValue}`;
-  arr.push(inputValue);
+  arr.push(input.value);
   localStorage.setItem("userName", arr);
+  userName.innerHTML = `${inputValue}`;
 };
+
 // localStorage.removeItem("userName");
