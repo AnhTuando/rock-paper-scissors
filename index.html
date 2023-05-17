@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PRS</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://i.pinimg.com/736x/79/34/c6/7934c6cf66ceade7c2986687946067b2.jpg"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="app">
+      <!------------------- Navigation ----------->
+      <div class="nav">
+        <div class="wrap-nav-boxes">
+          <div class="game-name">
+            <div class="first">Paper</div>
+            <div class="second">Rock</div>
+            <div class="third">Sciccors</div>
+          </div>
+          <div class="restart-box"><div class="restart-btn">Restart</div></div>
+          <div class="rules-box">
+            <div class="rules-btn">Rules</div>
+            <div class="rules none">
+              <div class="first-description">
+                You have 3 options: <span class="fr">hammer</span>
+                <span class="sc">bag</span> <span class="th">scissors</span>
+              </div>
+              <div class="second-description">
+                If you are player who win first
+
+                <span class="five-time">5</span> times, you will be the winner.
+              </div>
+              <div class="last-description">
+                Rely on your luck, win the game !
+              </div>
+              <div class="play-box"><div class="play-btn">Play</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!------------------- Game ----------->
+      <div class="main-game">
+        <div class="wrap-game">
+          <div class="player">
+            <div class="title">Your choice</div>
+            <div class="click-btn">
+              <span>Click</span> <i class="fa-solid fa-hand-point-right"></i>
+            </div>
+            <div class="box rock value-1">
+              <i class="fa-solid fa-hand-fist"></i>
+            </div>
+            <div class="box paper value-2">
+              <i class="fa-solid fa-hand"></i>
+            </div>
+            <div class="box sciccors value-3">
+              <i class="fa-solid fa-hand-peace"></i>
+            </div>
+          </div>
+          <div class="npc">
+            <div class="title">NPC choice</div>
+            <div class="box rock npc-rock value-1">
+              <i class="fa-solid fa-hand-fist"></i>
+            </div>
+            <div class="box paper npc-paper value-2">
+              <i class="fa-solid fa-hand"></i>
+            </div>
+            <div class="box sciccors npc-siccors value-3">
+              <i class="fa-solid fa-hand-peace"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--------------------------- Score ----------------------->
+      <div class="score">
+        <div class="wrap-score">
+          <div class="player-posistion"><i class="fa-solid fa-person"></i></div>
+          <div class="destination">
+            <i class="fa-solid fa-flag-checkered"></i>
+          </div>
+          <div class="npc-posistion"><i class="fa-solid fa-robot"></i></div>
+          <div class="player-score">
+            <div class="scr-box pl-lv-1">1</div>
+            <div class="scr-box pl-lv-2">2</div>
+            <div class="scr-box pl-lv-3">3</div>
+            <div class="scr-box pl-lv-4">4</div>
+            <div class="scr-box pl-lv-5">5</div>
+          </div>
+          <div class="npc-score">
+            <div class="scr-box npc-lv-5">5</div>
+            <div class="scr-box npc-lv-4">4</div>
+            <div class="scr-box npc-lv-3">3</div>
+            <div class="scr-box npc-lv-2">2</div>
+            <div class="scr-box npc-lv-1">1</div>
+          </div>
+        </div>
+      </div>
+      <div class="notice">
+        <div class="player-win none">
+          You <span class="w-cl">Won</span>This Turn
+        </div>
+        <div class="npc-win none">
+          You <span class="ls-cl">Lose</span>This Turn
+        </div>
+        <div class="tie none">Tie</div>
+        <div class="player-lose none">You Lose !! Haaahhaha :></div>
+        <div class="player-win-game none">Congratulations!! You Won</div>
+        <div class="next none">Next</div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
