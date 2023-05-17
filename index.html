@@ -20,6 +20,10 @@
     />
   </head>
   <body>
+    <div class="userName">
+      <span>Your Name:</span><input type="text" />
+      <div class="enter-btn">Enter</div>
+    </div>
     <div class="app">
       <!------------------- Navigation ----------->
       <div class="nav">
@@ -54,7 +58,7 @@
       <div class="main-game">
         <div class="wrap-game">
           <div class="player">
-            <div class="title">Your choice</div>
+            <div class="title"><span class="pl-tt">Your</span>'s choice</div>
             <div class="click-btn">
               <span>Click</span> <i class="fa-solid fa-hand-point-right"></i>
             </div>
@@ -69,7 +73,7 @@
             </div>
           </div>
           <div class="npc">
-            <div class="title">NPC choice</div>
+            <div class="title"><span class="npc-tt">NPC</span> choice</div>
             <div class="box rock npc-rock value-1">
               <i class="fa-solid fa-hand-fist"></i>
             </div>
@@ -85,11 +89,15 @@
       <!--------------------------- Score ----------------------->
       <div class="score">
         <div class="wrap-score">
-          <div class="player-posistion"><i class="fa-solid fa-person"></i></div>
+          <div class="player-posistion">
+            <i class="fa-solid fa-person"></i>
+          </div>
           <div class="destination">
             <i class="fa-solid fa-flag-checkered"></i>
           </div>
-          <div class="npc-posistion"><i class="fa-solid fa-robot"></i></div>
+          <div class="npc-posistion">
+            <i class="fa-solid fa-robot"></i>
+          </div>
           <div class="player-score">
             <div class="scr-box pl-lv-1">1</div>
             <div class="scr-box pl-lv-2">2</div>
@@ -117,6 +125,7 @@
         <div class="player-lose none">You Lose !! Haaahhaha :></div>
         <div class="player-win-game none">Congratulations!! You Won</div>
         <div class="next none">Next</div>
+        <div class="counting none">2</div>
       </div>
     </div>
     <script src="app.js"></script>

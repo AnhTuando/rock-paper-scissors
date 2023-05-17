@@ -28,6 +28,24 @@ let newNpcScoreArr = Array.from(npcScore);
 let newPlayerScoreArr = Array.from(playerScore);
 let i = 0;
 let k = 0;
+
+let countBox = document.querySelector(".counting");
+function countTime() {
+  countBox.classList.remove("none");
+
+  let count = 2;
+
+  countBox.innerHTML = `${count}`;
+  let interval = setInterval(function () {
+    count--;
+    countBox.innerHTML = `${count}`;
+    if (count == 0) {
+      clearInterval(interval);
+      countBox.classList.add("none");
+    }
+  }, 1000);
+}
+
 function handlePlayerWinScore() {
   i++;
   for (let j = 0; j <= newPlayerScoreArr.length; j++) {
@@ -36,6 +54,7 @@ function handlePlayerWinScore() {
     }
     if (i == 5) {
       noticePlayerWin.classList.remove("none");
+      noticeWinThisTurn.classList.add("none");
     }
   }
 }
@@ -47,6 +66,7 @@ function handlePlayerLoseScore() {
     }
     if (k == 5) {
       noticePlayerLose.classList.remove("none");
+      noticeLoseThisTurn.classList.add("none");
     }
   }
 }
@@ -88,6 +108,8 @@ sciccors.onclick = function () {
     randomBox.style.opacity = 1;
   }, 2000);
   removeNpcAnimationAndSetOpacity();
+  countTime();
+  removeMobileAnimation();
   if (randomBox.classList.contains(sameClass)) {
     setTimeout(function () {
       noticeTie.classList.remove("none");
@@ -120,6 +142,8 @@ rock.onclick = function () {
   sciccors.style.opacity = 0;
   paper.style.opacity = 0;
   removeNpcAnimationAndSetOpacity();
+  countTime();
+  removeMobileAnimation();
   let randomBoxId = Math.floor(Math.random() * newArr.length);
   let randomBox = newArr[randomBoxId];
 
@@ -158,6 +182,8 @@ paper.onclick = function () {
   sciccors.style.opacity = 0;
   rock.style.opacity = 0;
   removeNpcAnimationAndSetOpacity();
+  countTime();
+  removeMobileAnimation();
   let randomBoxId = Math.floor(Math.random() * newArr.length);
   let randomBox = newArr[randomBoxId];
 
@@ -216,14 +242,29 @@ function handleNextbtn() {
 }
 handleNextbtn();
 
-function checkResponsive() {
-  if (window.innerWidth <= 360) {
-    console.log(
-      "Trang web hiện tại đang responsive với max-width là 740px hoặc nhỏ hơn."
-    );
-  } else {
-    console.log(
-      "Trang web hiện tại không responsive với max-width là 740px hoặc nhỏ hơn."
-    );
-  }
+// Mobile
+if (window.matchMedia("(max-width: 360px)").matches) {
+  npcPaper.classList.add("npc-paper-animation-mobile");
+  npcRock.classList.add("npc-rock-animation-mobile");
+  npcSciccors.classList.add("npc-sciccors-animation-mobile");
 }
+function removeMobileAnimation() {
+  npcPaper.classList.remove("npc-paper-animation-mobile");
+  npcRock.classList.remove("npc-rock-animation-mobile");
+  npcSciccors.classList.remove("npc-sciccors-animation-mobile");
+}
+let input = document.querySelector(".userName input");
+let enter = document.querySelector(".enter-btn");
+let userBox = document.querySelector(".userName");
+let userName = document.querySelector(".title .pl-tt");
+// Lưu thông tin người dùng
+let arr = [];
+enter.onclick = function () {
+  userBox.classList.add("none");
+  theRules.classList.remove("none");
+  let inputValue = input.value;
+  userName.innerHTML = `${inputValue}`;
+  arr.push(inputValue);
+  localStorage.setItem("userName", arr);
+};
+localStorage.removeItem("userName");
