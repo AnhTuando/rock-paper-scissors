@@ -545,7 +545,7 @@
   }
 }
 /*--------------------------------------------- Responsive Moblie */
-@media (max-width: 360px) {
+@media (max-width: 740px) {
   body {
     max-width: 360px;
     height: 100vh;

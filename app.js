@@ -267,4 +267,4 @@ enter.onclick = function () {
   arr.push(inputValue);
   localStorage.setItem("userName", arr);
 };
-localStorage.removeItem("userName");
+// localStorage.removeItem("userName");
